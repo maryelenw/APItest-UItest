@@ -9,13 +9,13 @@ import time
 
 @given(u'I sent a request for the API without fill the fields')
 def create_request(context):
-  request = requests.get('https://api.interzoid.com/getweather?license=e39e0f235f8f1c1084ec8115cc5ef955&city= &state= ')
+  request = requests.get('https://api.interzoid.com/getweather?license=154b4435a1d20ec20f5c9c4848459899&city= &state= ')
   print(request.text)
   assert(request.status_code == 400)
 
 @then(u'I validate the response from the request')
 def validate_response(context):
-  response = requests.get('https://api.interzoid.com/getweather?license=e39e0f235f8f1c1084ec8115cc5ef955&city= &state= ')
+  response = requests.get('https://api.interzoid.com/getweather?license=154b4435a1d20ec20f5c9c4848459899&city= &state= ')
   print(response.content) 
   data = response.text
   assert_equals('Insufficient parameters: city and state are required\n', data)
