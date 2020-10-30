@@ -10,12 +10,10 @@ import time
 @given(u'I sent a request for the API informing a wrong state')
 def create_request(context):
   request = requests.get('https://api.interzoid.com/getweather?license=154b4435a1d20ec20f5c9c4848459899&city=Tampa&state=TX')
-  print(request.text)
-  assert(request.status_code == 404)
 
 @then(u'I validate the description from the bad request')
 def validate_response(context):
   response = requests.get('https://api.interzoid.com/getweather?license=154b4435a1d20ec20f5c9c4848459899&city=Tampa&state=TX')
-  print(response.content) 
   data = response.text
+  assert(response.status_code == 404)
   assert_equals("City and state location not found\n", data)
