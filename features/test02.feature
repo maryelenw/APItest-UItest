@@ -1,6 +1,6 @@
 Feature: Sending incorrect data to API
 
-  Scenario: Informing an incorrect state in the API post
+  Scenario: Informing an incorrect state in the API request
     Given I sent a request for the API informing a wrong state
     Then I validate the description from the bad request
   
