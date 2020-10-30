@@ -1,4 +1,4 @@
-Feature: Access X website and complete a purchase
+Feature: Access Demo Cart website and complete an order
 
   Scenario: Access site and do all the steps to buy a product
     Given I search for a new product

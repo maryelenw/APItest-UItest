@@ -10,6 +10,9 @@ API Test Feature:
   - state not registered
   - empty fields
 
+UI Test Feature:
+  - Access Demo Cart website and complete an order
+
 I used Linux Mint environment to develop this automation.
 
 
@@ -43,15 +46,11 @@ Execute the command line:
 - `pip install -r requirements.txt` or
 - `pip3 install -r requirements.txt`
 
-**_Step 4:_** Install wheel
-Execute the command line:
-- `pip3 install wheel`
-
-**_Step 5:_** Install Selenium and the appropriate webdrivers
+**_Step 4:_** Install Selenium and the appropriate webdrivers
 
 You can find an installation Guide here: https://selenium-python.readthedocs.io/installation.html
 
-**_Step 6:_** To run the test cases you can run:
+**_Step 5:_** To run the test cases you can run:
 
 - `behave`
 - `behave -n 'the scenario you want to run'`

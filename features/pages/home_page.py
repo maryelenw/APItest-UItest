@@ -1,4 +1,6 @@
 from features.pages.base_page import BasePage
+from selenium.webdriver.common.by import By
+import time
 
 
 class HomePage(BasePage):
@@ -26,4 +28,22 @@ class HomePage(BasePage):
     "check_accept_terms":"Select this check box to accept the",
     "im_not_a_robot": "recaptcha-anchor",
     "place_order":"litecheckout_place_order",
+    "product_added": "The product was added to your cart",
     }
+
+    def fill_in_Product(self):
+        customer_city = self.browser.find_element(By.ID, self.locators['customer_city'])
+        customer_city.send_keys("Boston")
+        customer_address = self.browser.find_element(By.ID, self.locators['customer_address'])
+        customer_address.send_keys("alfeneiros four street")
+        customer_full_name = self.browser.find_element(By.ID, self.locators['customer_full_name'])
+        customer_full_name.send_keys("Test")
+        customer_phone = self.browser.find_element(By.ID, self.locators['customer_phone'])
+        customer_phone.send_keys("48998098738")
+        customer_email = self.browser.find_element(By.ID, self.locators['customer_email'])
+        customer_email.send_keys("test@test.com")
+        customer_note = self.browser.find_element(By.ID, self.locators['customer_note'])
+        customer_note.send_keys("note 1")
+        self.browser.find_element(By.ID, self.locators['admin_banner']).click()
+        self.browser.find_element_by_xpath("//*[contains(text(), 'Select this check box to accept the ')]").click()
+
